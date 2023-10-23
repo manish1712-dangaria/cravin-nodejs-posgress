@@ -42,9 +42,9 @@ exports.getAllClubs = async (req, res) => {
 
 // Get a club by ID
 exports.getClubById = async (req, res) => {
-    const { clubId } = req.params;
+    const { id } = req.params;
     try {
-        const club = await clubService.getClubById(clubId);
+        const club = await clubService.getClubById(id);
         res.json(club);
     } catch (error) {
         console.error(error);
