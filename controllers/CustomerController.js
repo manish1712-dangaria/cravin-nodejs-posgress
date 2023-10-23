@@ -42,9 +42,9 @@ exports.getAllCustomers = async (req, res) => {
 
 // Get a customer by ID
 exports.getCustomerById = async (req, res) => {
-    const { customerId } = req.params;
+    const { id } = req.params;
     try {
-        const customer = await customerService.getCustomerById(customerId);
+        const customer = await customerService.getCustomerById(id);
         res.json(customer);
     } catch (error) {
         console.error(error);
@@ -54,10 +54,10 @@ exports.getCustomerById = async (req, res) => {
 
 // Update a customer by ID
 exports.updateCustomer = async (req, res) => {
-    const { customerId } = req.params;
+    const { id } = req.params;
     const updatedData = req.body;
     try {
-        const customer = await customerService.updateCustomer(customerId, updatedData);
+        const customer = await customerService.updateCustomer(id, updatedData);
         res.json(customer);
     } catch (error) {
         console.error(error);
@@ -67,9 +67,9 @@ exports.updateCustomer = async (req, res) => {
 
 // Delete a customer by ID
 exports.deleteCustomer = async (req, res) => {
-    const { customerId } = req.params;
+    const { id } = req.params;
     try {
-        await customerService.deleteCustomer(customerId);
+        await customerService.deleteCustomer(id);
         res.json({ message: 'Customer deleted successfully' });
     } catch (error) {
         console.error(error);

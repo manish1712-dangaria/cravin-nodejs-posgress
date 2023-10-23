@@ -43,9 +43,9 @@ exports.getAllBookings = async (req, res) => {
 
 // Get a booking by ID
 exports.getBookingById = async (req, res) => {
-    const { bookingId } = req.params;
+    const { id } = req.params;
     try {
-        const booking = await bookingService.getBookingById(bookingId);
+        const booking = await bookingService.getBookingById(id);
         res.json(booking);
     } catch (error) {
         console.error(error);
@@ -55,10 +55,10 @@ exports.getBookingById = async (req, res) => {
 
 // Update a booking by ID
 exports.updateBooking = async (req, res) => {
-    const { bookingId } = req.params;
+    const { id } = req.params;
     const updatedData = req.body;
     try {
-        const booking = await bookingService.updateBooking(bookingId, updatedData);
+        const booking = await bookingService.updateBooking(id, updatedData);
         res.json(booking);
     } catch (error) {
         console.error(error);
@@ -68,9 +68,9 @@ exports.updateBooking = async (req, res) => {
 
 // Delete a booking by ID
 exports.deleteBooking = async (req, res) => {
-    const { bookingId } = req.params;
+    const { id } = req.params;
     try {
-        await bookingService.deleteBooking(bookingId);
+        await bookingService.deleteBooking(id);
         res.json({ message: 'Booking deleted successfully' });
     } catch (error) {
         console.error(error);
