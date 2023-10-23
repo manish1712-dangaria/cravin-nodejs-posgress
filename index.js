@@ -10,7 +10,6 @@ const FRONT_END_URL = process.env.FRONT_END_URL || "http://localhost:8081"
 const clubRoutes = require('./routes/club');
 const bookingRoutes = require('./routes/booking');
 const customerRoutes = require('./routes/customer');
-const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
 
 const app = express();

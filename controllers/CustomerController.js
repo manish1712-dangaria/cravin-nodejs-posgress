@@ -7,16 +7,13 @@ exports.validate = (method) => {
         case 'createCustomer': {
             return [
                 body('name').notEmpty(),
-                // Add more validation rules for creating a customer as needed
             ];
         }
         case 'updateCustomer': {
             return [
                 body('name').notEmpty(),
-                // Add more validation rules for updating a customer as needed
             ];
         }
-        // Add more cases for other methods in the Customer controller
     }
 };
 

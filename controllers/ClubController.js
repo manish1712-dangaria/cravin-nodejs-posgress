@@ -7,16 +7,13 @@ exports.validate = (method) => {
         case 'createClub': {
             return [
                 body('club_name').notEmpty(),
-                // Add more validation rules for creating a club as needed
             ];
         }
         case 'updateClub': {
             return [
                 body('club_name').notEmpty(),
-                // Add more validation rules for updating a club as needed
             ];
         }
-        // Add more cases for other methods in the Club controller
     }
 };
 

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('Admins', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,24 +12,11 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      user_name: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
       email: {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-      email_verified_at: {
-        type: Sequelize.DATE,
-        allowNull: true
-      },
-      profile_image: {
-        type: Sequelize.STRING,
-        allowNull: true
+        type: Sequelize.STRING
       },
       status: {
         type: Sequelize.INTEGER,
@@ -46,6 +33,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Admins');
   }
 };

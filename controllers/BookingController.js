@@ -7,16 +7,13 @@ exports.validate = (method) => {
         case 'createBooking': {
             return [
                 body('name').notEmpty(),
-                // Add more validation rules for creating a booking as needed
             ];
         }
         case 'updateBooking': {
             return [
                 body('name').notEmpty(),
-                // Add more validation rules for updating a booking as needed
             ];
         }
-        // Add more cases for other methods in the Booking controller
     }
 };
 

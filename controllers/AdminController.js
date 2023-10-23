@@ -90,7 +90,6 @@ exports.register = async (req, res) => {
         const user = await db.Admin.create({
             name,
             email: email.toLowerCase(),
-            email_verified_at: new Date(),
             status: 1,
             password: hashedPassword
         });
