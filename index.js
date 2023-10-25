@@ -3,7 +3,6 @@ const path = require('path');
 require("dotenv").config();
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const cors = require('cors')
 const PORT = process.env.PORT || 5000
 // Import route files for each module
 const clubRoutes = require('./routes/club');
