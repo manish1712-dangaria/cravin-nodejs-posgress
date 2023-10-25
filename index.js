@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors')
 const PORT = process.env.PORT || 5000
-const FRONT_END_URL = process.env.FRONT_END_URL || "http://localhost:8081"
 // Import route files for each module
 const clubRoutes = require('./routes/club');
 const bookingRoutes = require('./routes/booking');
@@ -14,11 +13,7 @@ const adminRouter = require('./routes/admin');
 
 const app = express();
 
-const corsOptions = {
-  origin: FRONT_END_URL
-};
 
-app.use(cors(corsOptions))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
